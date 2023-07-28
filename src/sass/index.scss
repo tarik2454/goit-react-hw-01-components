@@ -14,3 +14,7 @@ body {
   background-color: $primiry-bg-color;
   line-height: 1.4;
 }
+
+@import './main';
+@import './section';
+@import './container';

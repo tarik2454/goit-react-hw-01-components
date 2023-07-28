@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // import clsx from 'clsx';
 import style from './Statistics.module.scss';
 import { getRandomHexColor } from '../../services/getRandomHexColor';
@@ -6,32 +7,40 @@ export const Statistics = props => {
   const { title, stats } = props;
 
   return (
-    <section className={style.statistics}>
-      {title ? <h2 className={style.title}>{title}</h2> : null}
-      <h1>This is test commit</h1>
-      <ul className={style.statList}>
-        {stats.map(item => {
-          const { id, label, percentage } = item;
+    <section className="section statistics">
+      <div className="container">
+        <div className={style.statisticsWrapper}>
+          {title ? <h2 className={style.title}>{title}</h2> : null}
 
-          return (
-            <li
-              key={id}
-              className={style.item}
-              style={{ backgroundColor: getRandomHexColor() }}
-            >
-              <span
-                className={style.label}
-                // className={clsx(style.label, style.success, {
-                //   [style.test]: true,
-                // })}
-              >
-                {label}
-              </span>
-              <span className="percentage">{percentage}%</span>
-            </li>
-          );
-        })}
-      </ul>
+          <ul className={style.statList}>
+            {stats.map(item => {
+              const { id, label, percentage } = item;
+
+              return (
+                <li
+                  key={id}
+                  className={style.item}
+                  style={{ backgroundColor: getRandomHexColor() }}
+                >
+                  <span
+                    className={style.label}
+                    // className={clsx(style.label, style.success, {
+                    //   [style.test]: true,
+                    // })}
+                  >
+                    {label}
+                  </span>
+                  <span className="percentage">{percentage}%</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
     </section>
   );
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string.isRequired,
 };

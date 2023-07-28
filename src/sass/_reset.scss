@@ -43,8 +43,12 @@ section {
   display: block;
 }
 
-ul[class],
-ol[class] {
+// ul[class],
+// ol[class] {
+//   padding-left: 0;
+// }
+ul,
+ol {
   padding-left: 0;
 }
 

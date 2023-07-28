@@ -1,10 +1,6 @@
 @import '../../sass/vars';
 
-.statistics {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.statisticsWrapper {
   width: 400px;
   background-color: $secondary-bg-color;
   border-radius: 2px;
@@ -13,6 +9,7 @@
 
 .title {
   margin: 30px 0;
+  text-align: center;
 }
 
 .statList {

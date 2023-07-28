@@ -7,23 +7,13 @@ import data from '../assets/data.json';
 import friends from '../assets/friends.json';
 import transactions from '../assets/transactions.json';
 
-import style from './App.module.scss';
-
 export const App = () => {
   return (
-    <main className={style.main}>
-      <div className={style.container}>
-        <Profile {...user} />
-      </div>
-      <div className={style.container}>
-        <Statistics title="Upload stats" stats={data} />
-      </div>
-      <div className={style.container}>
-        <FriendList friends={friends} />
-      </div>
-      <div className={style.container}>
-        <TransactionHistory items={transactions} />
-      </div>
+    <main className="main">
+      <Profile {...user} />
+      <Statistics title="Upload stats" stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory transactions={transactions} />
     </main>
   );
 };
