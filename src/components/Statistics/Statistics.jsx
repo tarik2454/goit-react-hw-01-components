@@ -8,7 +8,7 @@ export const Statistics = props => {
   return (
     <section className={style.statistics}>
       {title ? <h2 className={style.title}>{title}</h2> : null}
-
+      <h1>This is test commit</h1>
       <ul className={style.statList}>
         {stats.map(item => {
           const { id, label, percentage } = item;
