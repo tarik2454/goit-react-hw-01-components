@@ -1,4 +1,6 @@
-@import-normalize; /* bring in normalize.css styles */
+@import 'normalize.css';
+@import './reset';
+@import './vars';
 
 body {
   margin: 0;
@@ -7,9 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-size: 15px;
+  color: $primiry-text-color;
+  background-color: $primiry-bg-color;
+  line-height: 1.4;
 }
