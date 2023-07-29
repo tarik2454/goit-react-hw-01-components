@@ -1,8 +1,6 @@
-import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { List, Item, Name, Status, Online, Offline } from './FriendList.styled';
-
-console.dir(Status);
+import { FriendListItem } from '../FriendList/FriendListItem/FriendListItem.jsx';
+import { List } from './FriendList.styled';
 
 export const FriendList = ({ friends }) => {
   return (
@@ -10,18 +8,16 @@ export const FriendList = ({ friends }) => {
       <div className="container">
         <div className="friend">
           <List>
-            {friends.map(({ avatar, name, isOnline, id }) => (
-              <Item key={id}>
-                <Status>{isOnline ? <Online /> : <Offline />}</Status>
-                <img
-                  className="avatar"
-                  src={avatar}
-                  alt="User avatar"
-                  width="48"
+            {friends.map(({ avatar, name, isOnline, id }) => {
+              return (
+                <FriendListItem
+                  avatar={avatar}
+                  name={name}
+                  isOnline={isOnline}
+                  id={id}
                 />
-                <Name>{name}</Name>
-              </Item>
-            ))}
+              );
+            })}
           </List>
         </div>
       </div>
