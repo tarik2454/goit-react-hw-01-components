@@ -11,10 +11,10 @@ export const FriendList = ({ friends }) => {
             {friends.map(({ avatar, name, isOnline, id }) => {
               return (
                 <FriendListItem
+                  key={id}
                   avatar={avatar}
                   name={name}
                   isOnline={isOnline}
-                  id={id}
                 />
               );
             })}
