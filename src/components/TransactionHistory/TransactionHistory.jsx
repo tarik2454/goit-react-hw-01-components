@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import style from './TransactionHistory.module.scss';
 
 export const TransactionHistory = ({ transactions }) => {
@@ -35,4 +36,15 @@ export const TransactionHistory = ({ transactions }) => {
       </div>
     </section>
   );
+};
+
+TransactionHistory.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
