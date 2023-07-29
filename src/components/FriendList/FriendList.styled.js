@@ -1,26 +1,27 @@
 import { styled } from 'styled-components';
 
-export const Status = styled.div`
+export const Status = styled.span`
   position: relative;
   width: 15px;
   height: 15px;
   display: block;
   border-radius: 50%;
+  background-color: transparent;
 
-  &::before {
+  /* &::before {
     content: '';
     position: absolute;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-  }
+  } */
 `;
 
-export const Online = styled.div`
+export const Online = styled.span`
   background-color: red;
 `;
 
-export const Offline = styled.div`
+export const Offline = styled.span`
   background-color: blue;
 `;
 
