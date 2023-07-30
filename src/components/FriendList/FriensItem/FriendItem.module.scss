@@ -1,0 +1,40 @@
+@import '../../../sass/vars';
+
+.status {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+}
+
+.online {
+  background-color: red;
+}
+
+.offline {
+  background-color: blue;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: $secondary-bg-color;
+  box-shadow: 0px 3px 8px 0px rgba(140, 140, 140, 1);
+  border-radius: 3px;
+}
+
+.name {
+  font-weight: bold;
+  color: $primiry-text-color;
+}
