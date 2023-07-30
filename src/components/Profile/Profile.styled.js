@@ -45,11 +45,14 @@ export const StatsItem = styled.li`
   gap: 2px;
   width: 33.3333%;
   padding: 15px 0;
+  /* color: ${props => (props.$color ? props.$color : 'blue')}; */
 
   &:not(:last-child) {
     border-right: 1px solid silver;
   }
 `;
+
+console.dir(StatsItem);
 
 export const Quantity = styled.span`
   font-weight: bold;

@@ -15,7 +15,7 @@ export const App = () => {
         <Profile {...user} />
         <Statistics title="Upload stats" stats={data} />
         <FriendList friends={friends} />
-        {/* <TransactionHistory transactions={transactions} /> */}
+        <TransactionHistory transactions={transactions} />
       </>
     </main>
   );

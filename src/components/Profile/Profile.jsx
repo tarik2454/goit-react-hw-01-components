@@ -24,7 +24,8 @@ export const Profile = props => {
           </Description>
 
           <Stats>
-            <StatsItem>
+            {/* <StatsItem $color="red"> */}
+            <StatsItem $color="red">
               <span className="label">Followers</span>
               <Quantity>{stats.followers}</Quantity>
             </StatsItem>

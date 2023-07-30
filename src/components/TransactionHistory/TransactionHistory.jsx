@@ -1,49 +1,57 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-// export const TransactionHistory = ({ transactions }) => {
-//   return (
-//     <section className="section">
-//       <div className="container">
-//         <table className={style.transactionHistory}>
-//           <thead className={style.transactionHeader}>
-//             <tr>
-//               <th>Type</th>
-//               <th>Amount</th>
-//               <th>Currency</th>
-//             </tr>
-//           </thead>
+import {
+  TransactionHistoryWrapper,
+  TransactionHeader,
+  TransactionData,
+  StyledTh,
+  StyledTd,
+} from './TransactionHistory.styled';
 
-//           <tbody className={style.transactionData}>
-//             {transactions.map((transaction, index) => {
-//               const { id, type, amount, currency } = transaction;
+export const TransactionHistory = ({ transactions }) => {
+  return (
+    <section className="section">
+      <div className="container">
+        <TransactionHistoryWrapper>
+          <TransactionHeader>
+            <tr>
+              <StyledTh>Type</StyledTh>
+              <StyledTh>Amount</StyledTh>
+              <StyledTh>Currency</StyledTh>
+            </tr>
+          </TransactionHeader>
 
-//               const rowStyle = {
-//                 backgroundColor:
-//                   index % 2 !== 0 ? 'rgb(240, 240, 240)' : 'inherit',
-//               };
+          <TransactionData>
+            {transactions.map((transaction, index) => {
+              const { id, type, amount, currency } = transaction;
 
-//               return (
-//                 <tr key={id} style={rowStyle}>
-//                   <td>{type}</td>
-//                   <td>{amount}</td>
-//                   <td>{currency}</td>
-//                 </tr>
-//               );
-//             })}
-//           </tbody>
-//         </table>
-//       </div>
-//     </section>
-//   );
-// };
+              const rowStyle = {
+                backgroundColor:
+                  index % 2 !== 0 ? 'rgb(240, 240, 240)' : 'inherit',
+              };
 
-// TransactionHistory.propTypes = {
-//   transactions: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       type: PropTypes.string.isRequired,
-//       amount: PropTypes.string.isRequired,
-//       currency: PropTypes.string.isRequired,
-//     }).isRequired
-//   ).isRequired,
-// };
+              return (
+                <tr key={id} style={rowStyle}>
+                  <StyledTd>{type}</StyledTd>
+                  <StyledTd>{amount}</StyledTd>
+                  <StyledTd>{currency}</StyledTd>
+                </tr>
+              );
+            })}
+          </TransactionData>
+        </TransactionHistoryWrapper>
+      </div>
+    </section>
+  );
+};
+
+TransactionHistory.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+};
