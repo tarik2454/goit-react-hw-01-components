@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ProfileCard = styled.div`
   width: 320px;
   height: auto;
+  margin-top: 60px;
   border-radius: 2%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -16,7 +17,7 @@ export const Description = styled.div`
   gap: 8px;
   width: 100%;
   padding: 30px;
-  background-color: $secondary-bg-color;
+  background-color: ${({ theme }) => theme.colors.$secondaryBgColor};
 `;
 
 export const Avatar = styled.img`
@@ -28,7 +29,7 @@ export const Avatar = styled.img`
 export const Name = styled.p`
   font-size: 20px;
   font-weight: bold;
-  color: $secondary-text-color;
+  color: ${({ theme }) => theme.colors.$secondaryTextColor};
 `;
 
 export const Stats = styled.ul`
@@ -52,9 +53,7 @@ export const StatsItem = styled.li`
   }
 `;
 
-console.dir(StatsItem);
-
 export const Quantity = styled.span`
   font-weight: bold;
-  color: $secondary-text-color;
+  color: ${({ theme }) => theme.colors.$secondaryTextColor};
 `;

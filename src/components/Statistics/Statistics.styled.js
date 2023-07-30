@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const StatisticsWrapper = styled.div`
   width: 400px;
-  background-color: $secondary-bg-color;
+
+  background-color: ${({ theme }) => theme.colors.$secondaryBgColor};
   border-radius: 2px;
   overflow: hidden;
 `;

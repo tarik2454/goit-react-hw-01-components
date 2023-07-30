@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import { StatisticsWrapper, StatList, Item, Title } from './Statistics.styled';
 
-import { getRandomHexColor } from '../../services/getRandomHexColor';
+import { getRandomHexColor } from '../../utills/getRandomHexColor';
 
 export const Statistics = props => {
   const { title, stats } = props;

@@ -1,3 +1,7 @@
+import { createGlobalStyle } from 'styled-components';
+import { theme } from './theme';
+
+export const GlobalStyles = createGlobalStyle`
 /* !Reset */
 html {
   box-sizing: border-box;
@@ -43,12 +47,10 @@ section {
   display: block;
 }
 
-/*  
-ul[class],
-  ol[class] {
-  padding-left: 0;
-} 
-*/
+// ul[class],
+// ol[class] {
+//   padding-left: 0;
+// }
 ul,
 ol {
   padding-left: 0;
@@ -65,6 +67,7 @@ html:focus-within {
 
 body {
   min-height: 100vh;
+  // text-rendering: optimizeSpeed;
   line-height: 1;
 }
 
@@ -129,15 +132,6 @@ table {
   border-spacing: 0;
 }
 
-:root {
-  --white: #fff;
-  --black: #111;
-
-  --primiry-text-color: #727070;
-  --secondary-text-color: #424141;
-  --primiry-bg-color: #e6eef3;
-  --secondary-bg-color: #fff;
-}
 
 body {
   margin: 0;
@@ -147,7 +141,39 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
-  color: --primiry-text-color;
-  background-color: --primiry-bg-color;
+  color: $primiry-text-color;
+  background-color: ${theme.colors.$primiryBgColor};
   line-height: 1.4;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+   margin-bottom: 60px;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 375px;
+  padding: 0 20px 0 20px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+`;
