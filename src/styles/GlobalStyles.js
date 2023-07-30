@@ -141,7 +141,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
-  color: $primiry-text-color;
+  color:  ${theme.colors.$primiryTextColor};
   background-color: ${theme.colors.$primiryBgColor};
   line-height: 1.4;
 }
